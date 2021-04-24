@@ -10,8 +10,7 @@ from pywizlight import wizlight, PilotBuilder, PilotParser
 
 async def main():
 
-    # This code expects 4 parameters: r, g and b values, as well as brightness.
-    # If none are given, it will just turn on last color you had on
+    # This code expects 1 argument. The name of the color scheme you want to select
     codes = sys.argv
 
     #This is taking in ip addresses from an env file, but you can put in your ip addresses directly for each bulb
@@ -142,7 +141,7 @@ async def main():
                 converted = json.dumps(pyPay)
 
             payload = converted
-            
+
             url = f'http://{ip}/api/{user_id}/groups/{room}/action'
 
             requests.put(url, payload)
